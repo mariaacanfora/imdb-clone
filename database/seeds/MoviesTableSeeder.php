@@ -16,11 +16,11 @@ class MoviesTableSeeder extends Seeder
         {
             for ($i = 0; $i < 20; $i++) {
                 $travel = new Movie();
-                $travel->image_path = $faker->imageUrl;
+                $travel->coverImg = $faker->imageUrl;
                 $travel->title = $faker->title;
                 $travel->description = $faker->realText();
                 $travel->date= $faker->date;
-                $travel->duration =$faker->randomNumber(10);;
+                $travel->duration =$faker->randomNumber(1 , 10);
                 $travel->rating = $faker->text();
                 $travel->save();
         }
