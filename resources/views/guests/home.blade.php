@@ -21,6 +21,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app"></div>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <slider></slider>
+                </div>
+                <div class="col-4"></div>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>
