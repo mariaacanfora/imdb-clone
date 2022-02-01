@@ -21,15 +21,23 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    
     <div id="app">
+       <div class="container-fluid bg-dark">
+        <nav class="navbar navbar-dark bg-dark border-bottom">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">IMDB</a>
+            </div>
+          </nav>
         <div class="container">
-            <div class="row">
+            <div class="row py-5">
                 <div class="col-8">
-                    <slider></slider>
+                    <slider :carousel-list="{{json_encode($moviesCarousel)}}"></slider>
                 </div>
                 <div class="col-4"></div>
             </div>
         </div>
+       </div>
 
     </div>
 </body>
