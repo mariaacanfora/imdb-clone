@@ -34,11 +34,32 @@
                 <div class="col-8">
                     <slider :carousel-list="{{json_encode($moviesCarousel)}}"></slider>
                 </div>
-                <div class="col-4"></div>
+                <div class="col-4">
+                    <form action="" method="get">
+
+                        <select name="categories" id="">
+                            <option value="">Mostra tutti</option>
+                            @foreach ($categories as $category)
+                            <option value="{{$category->id}}" {{ Request::query("categories") == $category->id ? "selected" : '' }}>{{ $category->name }}</option>
+                            @endforeach
+                            
+                        </select>
+                        <button class="btn btn-success">Filtra</button>
+                    </form>
+                    <sidebar :movie-list="{{json_encode($filteredCategory)}}"></sidebar>
+
+                    {{-- lista con blade --}}
+                    {{-- <ul>
+                        @foreach($filteredCategory as $movie)
+                        <li>{{$movie->title}}</li>
+                        @endforeach
+                    </ul> --}}
+                </div>
             </div>
         </div>
-       </div>
-
     </div>
+    
+</div>
+@dump($filteredCategory)
 </body>
 </html>

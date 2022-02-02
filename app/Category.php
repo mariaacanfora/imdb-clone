@@ -9,6 +9,6 @@ class Category extends Model
     protected $fillable = ['name'];
 
     public function movies(){
-        return $this->belongsToMany('App\Movie');
+        return $this->belongsToMany('App\Movie', "movie_category");
     }
 }
